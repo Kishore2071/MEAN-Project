@@ -1,16 +1,5 @@
-const express = require('express')
-const app = express()
+const mongoose = require("mongoose")
 
-app.get("/",(req,res)=>{
-    res.send("Hello World")
+mongoose.connect("mongodb://localhost:27017/school",{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
+    console.log("Connection Sucessfull")
 })
-
-app.get("/about",(req,res)=>{
-    res.send("Hello World from about")
-})
-
-app.listen(3001,()=>{
-    console.log("Server Running at port 3001")
-})
-
-// http://localhost:3001/
